@@ -2,21 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Para Meu Amor ❤️</title>
+<title>Para Meu Amor</title>
 
 <style>
-
 body{
 background:linear-gradient(#ffd6ea,#fff0f7);
 font-family:Arial;
 text-align:center;
 padding-top:70px;
 overflow:hidden;
-}
-
-h1{
-font-size:50px;
-color:#ff0066;
 }
 
 button{
@@ -26,23 +20,25 @@ border:none;
 padding:18px 35px;
 font-size:22px;
 border-radius:30px;
-cursor:pointer;
 }
 
 #carta{
 display:none;
-background:#fff;
+background:white;
 padding:35px;
 max-width:650px;
 margin:40px auto;
 border-radius:20px;
-box-shadow:0 0 20px pink;
-animation:aparecer 2s;
 }
 
-@keyframes aparecer{
-from{opacity:0;transform:scale(.7);}
-to{opacity:1;}
+#foto{
+display:none;
+margin-top:30px;
+}
+
+img{
+width:300px;
+border-radius:25px;
 }
 
 .heart{
@@ -52,30 +48,16 @@ animation:subir 5s linear forwards;
 }
 
 @keyframes subir{
-0%{
-transform:translateY(0);
-opacity:1;
-}
 100%{
 transform:translateY(-900px);
 opacity:0;
 }
 }
-
-img{
-width:250px;
-border-radius:20px;
-margin-top:20px;
-box-shadow:0 0 15px pink;
-}
-
 </style>
 
 <script>
 
 function surpresa(){
-
-document.getElementById("carta").style.display="block";
 
 for(let i=0;i<30;i++){
 
@@ -84,30 +66,29 @@ heart.innerHTML="❤️";
 heart.className="heart";
 
 heart.style.left=Math.random()*100+"%";
-heart.style.bottom="0px";
+heart.style.bottom="0";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>{
-heart.remove();
+}
+
+setTimeout(function(){
+document.getElementById("carta").style.display="block";
+},2000);
+
+
+setTimeout(function(){
+document.getElementById("foto").style.display="block";
 },5000);
 
 }
 
-}
-
 </script>
-
 </head>
+
 <body>
 
 <h1>Para Minha Namorada ❤️</h1>
-
-<p>
-Tenho uma surpresa pra você...
-</p>
-
-<br>
 
 <button onclick="surpresa()">
 Clique aqui amor 💌
@@ -116,20 +97,24 @@ Clique aqui amor 💌
 
 <div id="carta">
 
-<h2>Minha Cartinha para Você 💖</h2>
+<h2>Minha Cartinha 💖</h2>
 
 <p>
-Desde que você chegou na minha vida,<br>
-tudo ficou mais bonito.<br><br>
+Você é a melhor parte dos meus dias.<br><br>
 
-Seu sorriso ilumina meus dias,<br>
-seu abraço é meu lugar favorito.<br><br>
+Seu abraço é meu lugar favorito.<br><br>
 
-Te amo mais do que palavras conseguem dizer. ❤️
+Te amo infinitamente. ❤️
 </p>
 
-<!-- Troque depois por foto de vocês -->
+</div>
+
+
+<div id="foto">
+<h2>Nós ❤️</h2>
+
 <img src="foto.jpg">
+
 </div>
 
 </body>
