@@ -2,15 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Para Meu Amor</title>
+<title>Para Meu Amor 💌</title>
 
 <style>
+
 body{
-background:linear-gradient(#ffd6ea,#fff0f7);
+background:linear-gradient(#ffd6ea,#fff4fa);
 font-family:Arial;
 text-align:center;
-padding-top:70px;
+padding-top:60px;
 overflow:hidden;
+}
+
+h1{
+color:#ff0066;
+font-size:48px;
 }
 
 button{
@@ -20,6 +26,18 @@ border:none;
 padding:18px 35px;
 font-size:22px;
 border-radius:30px;
+cursor:pointer;
+}
+
+#envelope{
+display:none;
+font-size:120px;
+margin-top:40px;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.1);}
 }
 
 #carta{
@@ -27,18 +45,32 @@ display:none;
 background:white;
 padding:35px;
 max-width:650px;
-margin:40px auto;
+margin:30px auto;
 border-radius:20px;
+box-shadow:0 0 20px pink;
+animation:abrirCarta 2s;
+}
+
+@keyframes abrirCarta{
+from{
+opacity:0;
+transform:scale(.6) rotate(-8deg);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
 }
 
 #foto{
 display:none;
-margin-top:30px;
+margin-top:20px;
 }
 
 img{
-width:300px;
+width:320px;
 border-radius:25px;
+box-shadow:0 0 18px pink;
 }
 
 .heart{
@@ -53,6 +85,7 @@ transform:translateY(-900px);
 opacity:0;
 }
 }
+
 </style>
 
 <script>
@@ -61,21 +94,22 @@ function surpresa(){
 
 for(let i=0;i<30;i++){
 
-let heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.className="heart";
-
-heart.style.left=Math.random()*100+"%";
-heart.style.bottom="0";
-
-document.body.appendChild(heart);
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.className="heart";
+h.style.left=Math.random()*100+"%";
+h.style.bottom="0";
+document.body.appendChild(h);
 
 }
 
 setTimeout(function(){
-document.getElementById("carta").style.display="block";
-},2000);
+document.getElementById("envelope").style.display="block";
+},1000);
 
+setTimeout(function(){
+document.getElementById("carta").style.display="block";
+},2500);
 
 setTimeout(function(){
 document.getElementById("foto").style.display="block";
@@ -90,19 +124,30 @@ document.getElementById("foto").style.display="block";
 
 <h1>Para Minha Namorada ❤️</h1>
 
+<p>Tenho uma cartinha pra você...</p>
+
+<br>
+
 <button onclick="surpresa()">
-Clique aqui amor 💌
+Abrir minha cartinha 💌
 </button>
+
+
+<div id="envelope">
+✉️
+</div>
 
 
 <div id="carta">
 
-<h2>Minha Cartinha 💖</h2>
+<h2>Minha Carta para Você 💖</h2>
 
 <p>
-Você é a melhor parte dos meus dias.<br><br>
+Desde que você chegou na minha vida,<br>
+tudo ficou mais bonito.<br><br>
 
-Seu abraço é meu lugar favorito.<br><br>
+Seu sorriso ilumina meus dias,<br>
+seu abraço é meu lugar favorito.<br><br>
 
 Te amo infinitamente. ❤️
 </p>
@@ -111,7 +156,8 @@ Te amo infinitamente. ❤️
 
 
 <div id="foto">
-<h2>Nós ❤️</h2>
+
+<h2>Nós 💞</h2>
 
 <img src="foto.jpg">
 
