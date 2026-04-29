@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Para Meu Amor</title>
+
+<style>
+body{
+background:pink;
+text-align:center;
+font-family:Arial;
+padding-top:100px;
+overflow:hidden;
+}
+
+h1{
+color:#ff0066;
+font-size:50px;
+}
+
+button{
+background:#ff0066;
+color:white;
+border:none;
+padding:20px 35px;
+font-size:22px;
+border-radius:30px;
+}
+
+#carta{
+display:none;
+margin-top:30px;
+background:white;
+padding:30px;
+width:70%;
+margin-left:auto;
+margin-right:auto;
+border-radius:20px;
+}
+
+.heart{
+font-size:50px;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.2);}
+}
+</style>
+
+<script>
+function abrirCarta(){
+document.getElementById("carta").style.display="block";
+}
+</script>
+
+</head>
+<body>
+
+<div class="heart">❤️</div>
+
+<h1>Para Meu Amor</h1>
+
+<button onclick="abrirCarta()">
+Clique aqui amor
+</button>
+
+<div id="carta">
+<h2>Eu te amo ❤️</h2>
+
+<p>
+Você é a melhor parte dos meus dias.
+Obrigado por existir.
+Feliz por ter você comigo.
+</p>
+
+</div>
+
+</body>
+</html>
