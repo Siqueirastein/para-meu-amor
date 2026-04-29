@@ -1,78 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Para Meu Amor</title>
+<meta charset="UTF-8">
+<title>Para Meu Amor ❤️</title>
 
 <style>
+
 body{
-background:pink;
-text-align:center;
+background:linear-gradient(#ffd6ea,#fff0f7);
 font-family:Arial;
-padding-top:100px;
+text-align:center;
+padding-top:70px;
 overflow:hidden;
 }
 
 h1{
-color:#ff0066;
 font-size:50px;
+color:#ff0066;
 }
 
 button{
 background:#ff0066;
 color:white;
 border:none;
-padding:20px 35px;
+padding:18px 35px;
 font-size:22px;
 border-radius:30px;
+cursor:pointer;
 }
 
 #carta{
 display:none;
-margin-top:30px;
-background:white;
-padding:30px;
-width:70%;
-margin-left:auto;
-margin-right:auto;
+background:#fff;
+padding:35px;
+max-width:650px;
+margin:40px auto;
 border-radius:20px;
+box-shadow:0 0 20px pink;
+animation:aparecer 2s;
+}
+
+@keyframes aparecer{
+from{opacity:0;transform:scale(.7);}
+to{opacity:1;}
 }
 
 .heart{
-font-size:50px;
-animation:pulse 1s infinite;
+position:fixed;
+font-size:30px;
+animation:subir 5s linear forwards;
 }
 
-@keyframes pulse{
-50%{transform:scale(1.2);}
+@keyframes subir{
+0%{
+transform:translateY(0);
+opacity:1;
 }
+100%{
+transform:translateY(-900px);
+opacity:0;
+}
+}
+
+img{
+width:250px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 15px pink;
+}
+
 </style>
 
 <script>
-function abrirCarta(){
+
+function surpresa(){
+
 document.getElementById("carta").style.display="block";
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.bottom="0px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
 }
+
+}
+
 </script>
 
 </head>
 <body>
 
-<div class="heart">❤️</div>
-
-<h1>Para Meu Amor</h1>
-
-<button onclick="abrirCarta()">
-Clique aqui amor
-</button>
-
-<div id="carta">
-<h2>Eu te amo ❤️</h2>
+<h1>Para Minha Namorada ❤️</h1>
 
 <p>
-Você é a melhor parte dos meus dias.
-Obrigado por existir.
-Feliz por ter você comigo.
+Tenho uma surpresa pra você...
 </p>
 
+<br>
+
+<button onclick="surpresa()">
+Clique aqui amor 💌
+</button>
+
+
+<div id="carta">
+
+<h2>Minha Cartinha para Você 💖</h2>
+
+<p>
+Desde que você chegou na minha vida,<br>
+tudo ficou mais bonito.<br><br>
+
+Seu sorriso ilumina meus dias,<br>
+seu abraço é meu lugar favorito.<br><br>
+
+Te amo mais do que palavras conseguem dizer. ❤️
+</p>
+
+<!-- Troque depois por foto de vocês -->
+<img src="foto.jpg">
 </div>
 
 </body>
